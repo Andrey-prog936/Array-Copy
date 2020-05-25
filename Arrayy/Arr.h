@@ -22,8 +22,10 @@ public:
 	void SortZrost();
 	void SortSpad();
 	void MaximumNumber();
+	void MaximumNumber2();
 	void MinimumNumber();
-	void Seredne();
+	void MinimumNumber2();
+	void Average();
 	void FillRand();
 	~Array();
 };

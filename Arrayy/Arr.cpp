@@ -13,9 +13,7 @@ Array::Array(int size)
 		this->size = size;
 		arr = new int[size];
 		for (int i = 0; i < size; i++)
-		{
-			arr[i] = 0;
-		}
+		{   arr[i] = 0;   }
 		max = 0;
 		min = 0;
 		average = 0;
@@ -28,9 +26,7 @@ Array::Array(const Array& ent)
 		average = ent.average;
 		arr = new int[size];
 		for (int i = 0; i < size; i++)
-		{
-			arr[i] = ent.arr[i];
-		}
+		{   arr[i] = ent.arr[i];   }
 	}
 
 	void Array::Print() const
@@ -39,29 +35,21 @@ Array::Array(const Array& ent)
 		for (int i = 0; i < size; i++)
 		{
 			if (i + 1 == size)
-			{
-				cout << arr[i] << " ";
-			}
+			{   cout << arr[i] << " ";   }
 			else
-			{
-				cout << arr[i] << ", ";
-			}
+			{   cout << arr[i] << ", ";   }
 		}
 		cout << endl;
 		cout << "Maximum = " << max << endl;
 		cout << "Minimum = " << min << endl;
 		cout << "Average = " << average << endl;
-
-
 	}
 	void Array::AddNumber(int cont)
 	{
 		int* temp = new int[size + 1];
 
 		for (int i = 0; i < size; i++)
-		{
-			temp[i] = arr[i];
-		}
+		{   temp[i] = arr[i];   }
 		temp[size] = cont;
 		size = size + 1;
 		delete[] arr;
@@ -69,19 +57,21 @@ Array::Array(const Array& ent)
 	}
 	void Array::DeleteNumber(int index)
 	{
-		int* temp = new int[size - 1];
-		int a = 0;
-		for (int i = 0; i < size; i++)
+		if (index > size || index < 0 )
+		{   cout << "Error" << endl;   }
+		else
 		{
-			if (i != index - 1)
+			int* temp = new int[size - 1];
+			int a = 0;
+			for (int i = 0; i < size; i++)
 			{
-				temp[a] = arr[i];
-				a++;
+				if (i != index - 1)
+				{   temp[a] = arr[i];  a++;   }
 			}
+			size = size - 1;
+			delete[] arr;
+			arr = temp;
 		}
-		size = size - 1;
-		delete[] arr;
-		arr = temp;
 	}
 	void Array::SortZrost()
 	{
@@ -114,19 +104,33 @@ Array::Array(const Array& ent)
 		SortSpad();
 		max = arr[0];
 	}
+	void Array::MaximumNumber2()
+	{
+		max = arr[0];
+		for (int i = 1; i < size; i++) {
+			if (arr[i] > max) 
+			{   max = arr[i];   }
+		}
+	}
 	void Array::MinimumNumber()
 	{
 		SortZrost();
 		min = arr[0];
 	}
-
-	void Array::Seredne()
+	void Array::MinimumNumber2()
+	{
+		min = arr[0];
+		for (int i = 0; i < size; ++i)
+		{
+			if (arr[i] < min)
+			{   min = arr[i];   }
+		}
+	}
+	void Array::Average()
 	{
 		float sum = 0;
 		for (int i = 0; i < size; i++)
-		{
-			sum = sum + arr[i];
-		}
+		{   sum = sum + arr[i];   }
 		this->average = sum / this->size;
 	}
 	void Array::FillRand()
@@ -135,13 +139,8 @@ Array::Array(const Array& ent)
 		for (int i = 0; i < size; i++)
 		{
 			if (arr[i] == 0)
-			{
-				arr[i] = (rand() % 100);
-			}
+			{   arr[i] = (rand() % 100);   }
 		}
 	}
 	Array::~Array()
-	{
-		delete[] arr;
-	}
-
+	{   delete[] arr;   }
