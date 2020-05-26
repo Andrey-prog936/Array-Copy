@@ -2,8 +2,6 @@
 #include "Arr.h"
 using namespace std;
 
-
-
 int main()
 {
 	Array Arr1(5);
@@ -20,7 +18,7 @@ int main()
 	Arr1.Average(); 
 	Arr1.Print();
 	cout << "-=-=-=-=-=-=-=-=-=-=-=-=-=-=-=-=-=-" << endl;
-	Arr1.DeleteNumber(2); // deletes cell number one [1]
+	Arr1.DeleteNumber(1); // deletes arr[0]
 	Arr1.MaximumNumber2();
 	Arr1.MinimumNumber2();
 	Arr1.Average();
