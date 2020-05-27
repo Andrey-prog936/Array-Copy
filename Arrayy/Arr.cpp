@@ -58,7 +58,7 @@ Array::Array(const Array& ent)
 	void Array::DeleteNumber(int index)
 	{
 		if (index > size || index < 0 )
-		{   cout << "Error" << endl;   }
+		{   cout << "Deleting Error" << endl;   }
 		else
 		{
 			int* temp = new int[size - 1];
