@@ -27,5 +27,13 @@ public:
 	void MinimumNumber2();
 	void Average();
 	void FillRand();
+	operator long();
+	Array& operator=(const Array& other);
+	Array operator-() const;
+	Array operator++(int);
+	Array operator++();
+	Array operator--(int);
+	Array operator--();
+
 	~Array();
 };
