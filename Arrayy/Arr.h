@@ -28,6 +28,8 @@ public:
 	void Average();
 	void FillRand();
 	operator long();
+	int& operator[](int index);
+	void operator()(int number);
 	Array& operator=(const Array& other);
 	Array operator-() const;
 	Array operator++(int);

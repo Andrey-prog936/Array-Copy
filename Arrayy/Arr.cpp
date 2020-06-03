@@ -90,9 +90,12 @@ void Array::DeleteNumber(int index)
 void Array::SortZrost()
 {
 	int temps;
-	for (int i = 0; i < size - 1; i++) {
-		for (int j = 0; j < size - i - 1; j++) {
-			if (arr[j] > arr[j + 1]) {
+	for (int i = 0; i < size - 1; i++)
+	{
+		for (int j = 0; j < size - i - 1; j++)
+		{
+			if (arr[j] > arr[j + 1])
+			{
 				temps = arr[j];
 				arr[j] = arr[j + 1];
 				arr[j + 1] = temps;
@@ -173,6 +176,22 @@ Array::operator long()
 	}
 	return sum;
 }
+//~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~
+int& Array::operator[](int index)
+{
+	if (index >= 0 && index < size)
+	{
+		return arr[index];
+	}
+}
+void Array::operator()(int number)
+{
+		for (int i = 0; i < size; i++)
+		{
+			arr[i] = arr[i] + number;
+		}
+}
+//~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~
 Array& Array::operator=(const Array& other)
 {
 	this->size = other.size;
@@ -186,6 +205,7 @@ Array& Array::operator=(const Array& other)
 	}
 	return *this;
 }
+
 Array Array::operator-() const
 {
 	for (int i = 0; i < size; i++)

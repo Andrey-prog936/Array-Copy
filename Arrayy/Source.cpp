@@ -21,11 +21,19 @@ int main()
 	cout << "-=-=-=-=-=-=-=-=-=-=-=-=-=-=-=-=-=-" << endl;
 	arr2 = -Arr1;
 	arr2.Print();
+	Arr1.operator-();
+	//~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~
+	cout << "|~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~|" << endl;
+	cout << "|=-=-=-=-=-DZ 03.06.2020-=-=-=-=-=|" << endl;
+	cout << "|~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~|" << endl;
+	Arr1.MaximumNumber();	Arr1.MinimumNumber();	Arr1.Average();
+	Arr1.Print();
 	cout << "-=-=-=-=-=-=-=-=-=-=-=-=-=-=-=-=-=-" << endl;
-
-
-
-
+	cout <<"\tcout for index: " <<Arr1.operator[](1) << endl;
+	Arr1.operator()(10);
+	Arr1.MaximumNumber();	Arr1.MinimumNumber();	Arr1.Average();
+	Arr1.Print();
+	
 	/*
 	cout << "-=-=-=-=-=-=-=-=-=-=-=-=-=-=-=-=-=-" << endl;
 	Arr1.SortZrost();
